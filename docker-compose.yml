@@ -4,8 +4,8 @@ services:
     container_name: yb
     ports:
       - "127.0.0.1:5433:5433" 
-    volumes:
-      - certs:/app/generated_certs
+    # volumes:
+      # - certs:/app/generated_certs
     healthcheck: 
       test: ysqlsh -h $(hostname) -c \\conninfo || exit 1;
       interval: 2s
@@ -18,11 +18,11 @@ services:
     working_dir: /app
     volumes:
       - .:/app 
-      - certs:/generated_certs
+      # - certs:/generated_certs
     command: bash -c "bundle install && ruby pg.rb"
     depends_on:
       yb:
         condition: service_healthy
 
-volumes:
-  certs:
+# volumes:
+#   certs:

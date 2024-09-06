@@ -5,10 +5,10 @@ conn = PG.connect(
   port: 5433,
   user: 'yugabyte',
   dbname: 'yugabyte',
-  sslmode: 'require',
-  sslrootcert: '/generated_certs/127.0.0.1/ca.crt',
-  sslcert: '/generated_certs/127.0.0.1/node.127.0.0.1.crt',
-  sslkey: '/generated_certs/127.0.0.1/node.127.0.0.1.key'
+  sslmode: 'disable',
+  # sslrootcert: '/generated_certs/127.0.0.1/ca.crt',
+  # sslcert: '/generated_certs/127.0.0.1/node.127.0.0.1.crt',
+  # sslkey: '/generated_certs/127.0.0.1/node.127.0.0.1.key'
 )
 
 $stdout.sync = true
